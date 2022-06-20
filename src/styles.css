@@ -574,7 +574,7 @@ body {
   }
 }
 
-#delivery-state i {
+#delivery-state svg {
   vertical-align: middle;
   color: #4bca50;
   animation-duration: 1s;
@@ -591,7 +591,7 @@ body {
   font-size: .6rem;
 }
 
-#delivery-state i.fa-stack-2x {
+#delivery-state svg.fa-stack-2x {
   color: #318135;
 }
 
