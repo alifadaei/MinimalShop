@@ -4,6 +4,7 @@ import Header from "./components/header";
 import Banner from "./components/banner";
 import ShoppingCart from "./components/shopping-cart";
 import Categories from "./components/categories";
+import Login from "./components/login";
 
 class App extends Component {
   state = {
@@ -13,7 +14,7 @@ class App extends Component {
         categoryID: 1,
         categoryName: "گوشت",
         productName: "سوسیس",
-        price: "20,000",
+        price: 200,
         quantity: 10,
         src: require("./assets/svg/sausage.svg"),
       },
@@ -22,7 +23,7 @@ class App extends Component {
         categoryID: 1,
         categoryName: "گوشت",
         productName: "تکه گوشت مرغ",
-        price: "10,000",
+        price: 100,
         quantity: 20,
         src: require("./assets/svg/chicken-leg.svg"),
       },
@@ -31,7 +32,7 @@ class App extends Component {
         categoryID: 2,
         categoryName: "سالاد",
         productName: "سالاد",
-        price: "10,000",
+        price: 1000,
         quantity: 10,
         src: require("./assets/svg/salad.svg"),
       },
@@ -40,7 +41,7 @@ class App extends Component {
         categoryID: 3,
         categoryName: "سس",
         productName: "مایونز",
-        price: "20,000",
+        price: 300,
         quantity: 10,
         src: require("./assets/svg/mayonnaise.svg"),
       },
@@ -49,7 +50,7 @@ class App extends Component {
         categoryID: 3,
         categoryName: "سس",
         productName: "کچاپ",
-        price: "10,000",
+        price: 130,
         quantity: 20,
         src: require("./assets/svg/ketchup.svg"),
       },
@@ -58,7 +59,7 @@ class App extends Component {
         categoryID: 3,
         categoryName: "سس",
         productName: "خردل",
-        price: "30,000",
+        price: 150,
         quantity: 20,
         src: require("./assets/svg/mustard.svg"),
       },
@@ -66,31 +67,43 @@ class App extends Component {
   };
 
   clickHandler = (id, operand) => {
-    console.log("salam");
     const index = this.state.products.findIndex((product) => {
       return product.id === id;
     });
     const products = this.state.products;
     products[index].quantity += operand;
-    // console.log(products[index].quantity);
     if (products[index].quantity < 0) return;
     this.setState({ products });
   };
 
+  trashHandler = () => {
+    const products = this.state.products;
+    products.forEach((product) => {
+      product.quantity = 0;
+    });
+    this.setState({ products });
+  };
   render() {
     return (
       <React.Fragment>
         <Header />
-        <main>
+        {/* <main>
           <Banner />
           <div id="panel-container" className="rtl wrapper">
             <Categories
               products={this.state.products}
               clickHandler={this.clickHandler}
             />
-            <ShoppingCart />
+            <ShoppingCart
+              trashHandler={this.trashHandler}
+              products={this.state.products.filter(
+                (product) => product.quantity !== 0
+              )}
+              clickHandler={this.clickHandler}
+            />
           </div>
-        </main>
+        </main> */}
+        <Login />
       </React.Fragment>
     );
   }

@@ -1,40 +1,43 @@
 import React, { Component } from 'react';
+import CartItem from './shopping-cart-item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 class ShoppingCart extends Component {
     state = {  } 
+
     render() { 
+        const {clickHandler, products, trashHandler} = this.props;
         return (
             <div id="shopping-basket" className="rtl">
             <div id="sbp1">
                 <i id="sbp1-garbage" className="fal fa-trash-alt"></i>
-                <h3 id="sbp1-title"> سبد خرید<span>&nbsp;(3)</span></h3>
+                <FontAwesomeIcon icon={faTrashCan} id='sbp1-garbage' onClick={trashHandler} style={{cursor: 'pointer'}}/>
+                <h3 id="sbp1-title">سبد خرید<span>&nbsp;({products.length})</span></h3>
                 <div className="clearfix"></div>
             </div>
-            <div className="sbp2">
-                <div className="sbp2-right">
-                    <h3 className="sbp2-title">تکه گوشت مرغ</h3>
-                    <div className="sbp2-price">300,000 تومان</div>
-                </div>
-                <div className="control">
-                    <i className="plus fal fa-plus-circle"></i>
-                    <div className="quantity">4</div>
-                    <i className="minus fal fa-minus-circle"></i>
-                </div>
-            </div>
+
+            { products.map(product =>
+            <CartItem
+            key={product.id}
+            clickHandler={clickHandler}
+            product={product} />
+            )}
+            
+    
 
             <div id="sbp3">
-                <div id="sbp3-discount">
-                    <p>تخفیف:</p>
-                    <p> 10,000 تومان</p>
-                </div>
-                <div id="sbp3-total-charge">
+
+                <div id="sbp3-total-charge" className='mt-2'>
                     <p>هزینه کل:</p>
                     <div>
-                        <strike>10,000 تومان</strike>
-                        <p>9,000 تومان</p>
+                        <p>{products.reduce((sum, product)=>{
+                            sum += product.price * product.quantity;
+                            return sum;
+                        }, 0)} تومان</p>
                     </div>
                 </div>
             </div>
-            <h3 id="have-code">کد تخفیف دارید؟</h3>
+            {/* <h3 id="have-code">کد تخفیف دارید؟</h3> */}
             <div id="finish" className="btn btn-primary">نهایی کردن سفارش</div>
         </div>
         );
