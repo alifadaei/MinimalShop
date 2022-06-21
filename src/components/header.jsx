@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import logo from '../assets/img/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { Link } from "react-router-dom";
 class Header extends Component {
     state = {}
     render() {
         return (
-            <header className="shadow">
+            <header className="shadow" style={{ zIndex: 3000, background: 'white' }} >
                 <nav className="navbar rtl container wrapper">
-                    <a id="navbar-logo" href="#">
+                    <Link to='/' id="navbar-logo" href="#">
                         <img src={logo} alt="لوگو سیب تامبولی" style={{ width: 120 }} />
-                    </a>
+                    </Link>
                     <div id="navbar-left-side">
                         <div id="navbar-links" className="navbar-nav">
-                            <a className="nav-link" style={{ cursor: 'pointer' }}>قوانین سایت</a>
+                            <Link to='/faq' className="nav-link" style={{ cursor: 'pointer' }}>قوانین سایت</Link>
                         </div>
                         <div id="login-btn">
-                            <a className="btn btn-primary"><FontAwesomeIcon className='mx-2' icon={faUser} style={{ cursor: 'pointer' }} />ورود | عضویت </a>
+                            <Link className="btn btn-primary" to="/login"><FontAwesomeIcon className='mx-2' icon={faUser} style={{ cursor: 'pointer' }} />ورود | عضویت </Link>
                         </div>
                         <button id="navbar-toggler" className="navbar-toggler" type="button">
                             <i className="fal fa-bars"></i>

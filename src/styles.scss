@@ -1,16 +1,22 @@
- /** global styles **/
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/** global styles **/
 @font-face {
-  font-family: 'IRANYekanLight';
-  src: url('./assets/fonts/IRANYekanLight.eot');
-  src: local('☺'), url('./assets/fonts/IRANYekanLight.woff') format('woff'), url('./assets/fonts/IRANYekanLight.ttf') format('truetype'), url('./assets/fonts/IRANYekanLight.svg') format('svg');
+  font-family: "IRANYekanLight";
+  src: url("./assets/fonts/IRANYekanLight.eot");
+  src: local("☺"), url("./assets/fonts/IRANYekanLight.woff") format("woff"),
+    url("./assets/fonts/IRANYekanLight.ttf") format("truetype"),
+    url("./assets/fonts/IRANYekanLight.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'IRANYekanBold';
-  src: url('./assets/fonts/IRANYekanBold.eot');
-  src: local('☺'), url('./assets/fonts/IRANYekanBold.woff') format('woff'), url('./assets/fonts/IRANYekanBold.ttf') format('truetype'), url('./assets/fonts/IRANYekanBold.svg') format('svg');
+  font-family: "IRANYekanBold";
+  src: url("./assets/fonts/IRANYekanBold.eot");
+  src: local("☺"), url("./assets/fonts/IRANYekanBold.woff") format("woff"),
+    url("./assets/fonts/IRANYekanBold.ttf") format("truetype"),
+    url("./assets/fonts/IRANYekanBold.svg") format("svg");
   font-weight: bold;
   font-style: normal;
 }
@@ -20,14 +26,21 @@
 }
 
 * {
-  font-family: 'IRANYekanLight';
+  font-family: "IRANYekanLight";
 }
+
+$primary: #f88a42;
+$secondary: #f66c11;
+$accent: #42b0f8;
+$pale: #fbbd95;
+$very-pale: rgba(251, 189, 149, 0.38);
+$text: #656565;
 
 :root {
   --primary: #f88a42;
-  --secondary: #F66C11;
-  --accent: #42B0F8;
-  --pale: #FBBD95;
+  --secondary: #f66c11;
+  --accent: #42b0f8;
+  --pale: #fbbd95;
   --very-pale: rgba(251, 189, 149, 0.38);
   --text: #656565;
 }
@@ -66,15 +79,15 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 textarea.form-control:focus,
-.uneditable-input:focus{
+.uneditable-input:focus {
   border-color: var(--pale);
   box-shadow: 0 0 8px var(--pale);
   outline: 0 none;
 }
-.btn-primary:focus{
+.btn-primary:focus {
   box-shadow: 0 0 8px var(--pale);
 }
-.form-control:focus{
+.form-control:focus {
   border-color: var(--pale);
   box-shadow: 0 0 8px var(--pale);
 }
@@ -82,7 +95,6 @@ textarea.form-control:focus,
 /** end global styles **/
 
 /** header styles **/
-
 
 @media (min-width: 993px) {
   .navbar-brand img {
@@ -106,7 +118,6 @@ textarea.form-control:focus,
   background: none;
 }
 
-
 .navbar-light .navbar-nav .nav-link {
   color: white;
 }
@@ -124,7 +135,7 @@ textarea.form-control:focus,
 .top-nav img {
   padding: 0px 0 0px 20px;
   float: right;
-  margin: 13px 0
+  margin: 13px 0;
 }
 
 .wrapper {
@@ -136,7 +147,7 @@ textarea.form-control:focus,
   color: white;
   margin: 10px 10px;
   font-family: IRANYekanLight;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .top-nav a:hover {
@@ -146,7 +157,7 @@ textarea.form-control:focus,
 }
 
 #header-phone {
-  font-family: 'IRANYekanBold';
+  font-family: "IRANYekanBold";
   color: white;
   font-size: 25px;
   margin-left: 80px;
@@ -157,7 +168,6 @@ textarea.form-control:focus,
     display: none;
   }
 }
-
 
 @media (max-width: 994px) {
   .cat-nav {
@@ -175,14 +185,13 @@ textarea.form-control:focus,
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .cat-nav a:hover {
   text-decoration: none;
   color: white;
   opacity: 100%;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .cat-nav img {
@@ -205,11 +214,10 @@ textarea.form-control:focus,
   font-size: 30px;
   border-bottom: 3px solid orangered;
   max-width: 180px;
-  padding-bottom: .4em;
+  padding-bottom: 0.4em;
   margin-bottom: 0;
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
-
 
 .card-text h3 {
   font-size: 23px;
@@ -229,11 +237,11 @@ textarea.form-control:focus,
 /* accordions styles */
 .accordion .btn i.fa-chevron-down:not(.collapsed) {
   transform: rotate(180deg);
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .accordion .btn i.fa-chevron-down.collapsed {
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .accordion .card-body {
@@ -268,10 +276,10 @@ textarea.form-control:focus,
 
 /* contact page */
 
-#contact-box a{
+#contact-box a {
   color: var(--primary);
 }
-#contact-box a:hover{
+#contact-box a:hover {
   color: var(--secondary);
   text-decoration: none;
   border-bottom: dotted var(--accent) 1px;
@@ -289,10 +297,10 @@ textarea.form-control:focus,
 
 footer #footer-social a.footer-social-item {
   display: inline-block;
-
 }
 
-#footer-social span.fab, span.fa {
+#footer-social span.fab,
+span.fa {
   color: white;
   padding: 10px;
   border: 1px white solid;
@@ -302,7 +310,8 @@ footer #footer-social a.footer-social-item {
   opacity: 70%;
 }
 
-#footer-social span.fab:hover, span.fa:hover {
+#footer-social span.fab:hover,
+span.fa:hover {
   opacity: 100%;
 }
 
@@ -327,24 +336,24 @@ footer #footer-social a.footer-social-item {
 }
 
 /* branches */
-.branches a, .branches:hover {
+.branches a,
+.branches:hover {
   text-decoration: none;
   color: #383838;
 }
 
 .branches a img {
-  transition: .2s ease-out;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, .3);
+  transition: 0.2s ease-out;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
 }
 
 .branches a img:hover {
-  box-shadow: 0 0 10px 4px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.3);
 }
 
 .branches img {
   border-radius: 10px;
   width: 100%;
-
 }
 
 .branches h4 {
@@ -354,7 +363,7 @@ footer #footer-social a.footer-social-item {
 
 .branches h6 {
   font-size: 15px;
-  color: var(--primary)
+  color: var(--primary);
 }
 
 .branches a.col-12 {
@@ -365,7 +374,6 @@ footer #footer-social a.footer-social-item {
   .branches h1 {
     font-size: 23px;
   }
-
 }
 
 body {
@@ -373,7 +381,7 @@ body {
 }
 
 :root {
-  --border: rgba(0,0,0,.11);
+  --border: rgba(0, 0, 0, 0.11);
 }
 
 /* navbar styles */
@@ -384,7 +392,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
 @media (max-width: 780px) {
@@ -399,7 +407,6 @@ body {
     padding: 1rem 1rem;
   }
 }
-
 
 #navbar-logo {
   margin: 10px 20px;
@@ -432,7 +439,7 @@ body {
   margin-left: 10px;
   color: var(--text);
   border: 1px solid transparent;
-  transition: .3s ease-out;
+  transition: 0.3s ease-out;
   border-radius: 4px;
 }
 
@@ -445,7 +452,6 @@ body {
 #navbar-links .nav-link:hover {
   border: 1px solid var(--accent);
 }
-
 
 #login-btn .btn {
   color: var(--text);
@@ -518,12 +524,11 @@ body {
   background-repeat: no-repeat;
   text-align: center;
   color: white;
-  padding: 2rem .5rem;
+  padding: 2rem 0.5rem;
 }
 
-
 #top-banner-title {
-  font-family: 'IRANYekanBold';
+  font-family: "IRANYekanBold";
   font-size: 2rem;
 }
 
@@ -540,10 +545,10 @@ body {
 #delivery-time {
   max-width: 220px;
   margin: 1rem auto;
-  font-size: .9rem;
-  padding: .5rem .5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 664px) {
@@ -560,7 +565,7 @@ body {
 }
 
 #delivery-time .list-inline-item {
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 #delivery-state {
@@ -589,7 +594,7 @@ body {
 }
 
 #delivery-state .fa-stack {
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 #delivery-state svg.fa-stack-2x {
@@ -598,7 +603,7 @@ body {
 
 @keyframes flash {
   0% {
-    opacity: 0
+    opacity: 0;
   }
   50% {
     opacity: 100;
@@ -623,7 +628,7 @@ body {
   padding: 20px;
   width: 100%;
   background-color: white;
-  border: solid 1px rgba(0, 0, 0, .2);
+  border: solid 1px rgba(0, 0, 0, 0.2);
   padding-bottom: 120px;
 }
 
@@ -649,7 +654,7 @@ body {
 }
 
 .category .row .food-item {
-  border: solid 1px rgba(0, 0, 0, .2);
+  border: solid 1px rgba(0, 0, 0, 0.2);
   padding: 15px;
   text-align: right;
   margin-bottom: 25px;
@@ -692,12 +697,11 @@ body {
 #order-panel .row.category {
   background-color: #ffc107;
   margin: 10px 10px;
-
 }
 
 #shopping-basket {
   background-color: white;
-  border: solid 1px rgba(0, 0, 0, .2);
+  border: solid 1px rgba(0, 0, 0, 0.2);
   width: 400px;
   margin-right: 1rem;
 }
@@ -719,40 +723,40 @@ body {
 
 /* shopping basket */
 
-#sbp1{
-  border-bottom: .5px var(--border) solid ;
-  padding: 1rem 1rem .5rem 1rem;
+#sbp1 {
+  border-bottom: 0.5px var(--border) solid;
+  padding: 1rem 1rem 0.5rem 1rem;
 }
 #sbp1-garbage {
   float: left;
   font-size: 1.3rem;
   margin-top: 0px;
 }
-#sbp1-title{
+#sbp1-title {
   text-align: right;
   font-size: 1rem;
 }
 
-.sbp2{
-  padding: .6rem 1rem .6rem 1rem;
+.sbp2 {
+  padding: 0.6rem 1rem 0.6rem 1rem;
   font-size: 1rem;
   text-align: right;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: .5px var(--border) solid ;
+  border-bottom: 0.5px var(--border) solid;
 }
 
-.sbp2 .sbp2-title{
+.sbp2 .sbp2-title {
   font-weight: bold;
   font-size: 1rem;
   margin: 0;
 }
 
-.sbp2 .sbp2-price{
+.sbp2 .sbp2-price {
   margin-top: 5px;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .sbp2 .control {
@@ -763,7 +767,7 @@ body {
   align-items: center;
 }
 
-.sbp2 .control .quantity{
+.sbp2 .control .quantity {
   font-size: 1.4rem;
   margin-left: 5px;
   margin-right: 5px;
@@ -774,17 +778,17 @@ body {
   margin-right: 5px;
 }
 
-#sbp3{
+#sbp3 {
   margin-bottom: 1rem;
 }
-#sbp3 #sbp3-discount{
+#sbp3 #sbp3-discount {
   padding: 1rem 1rem 0 1rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-#sbp3 #sbp3-total-charge{
+#sbp3 #sbp3-total-charge {
   font-weight: bold;
   padding: 0 1rem;
   display: flex;
@@ -792,13 +796,13 @@ body {
   flex-direction: row;
 }
 
-#sbp3-total-charge div strike{
-  text-decoration-line: line-through ;
-  text-decoration-color: var(--primary) ;
+#sbp3-total-charge div strike {
+  text-decoration-line: line-through;
+  text-decoration-color: var(--primary);
   font-weight: normal;
   margin-bottom: 0;
 }
-#sbp3-total-charge div p{
+#sbp3-total-charge div p {
   font-weight: bold;
   font-size: 1.2rem;
   color: var(--primary);
@@ -812,23 +816,47 @@ body {
   color: var(--text);
 }
 
-#finish{
+#finish {
   padding: 10px 10%;
   width: 312px;
   text-align: center;
   margin: 0 20px;
 }
 
-p h1, h2,h3,h4,h4, span, svg {
+p h1,
+h2,
+h3,
+h4,
+h4,
+span,
+svg {
   color: var(--text);
 }
 
-#login-container{
+#login-container {
   margin-top: 120px;
 }
 
-header{
+header {
   position: fixed;
   top: 0;
   width: 100vw;
+}
+
+.margin-top {
+  margin-top: 68.46px;
+}
+
+//bootstrap theming
+
+$theme-colors: (
+  $primary: #f88a42,
+  $danger: #ff4136,
+);
+
+.btn-primary:disabled,
+.btn-primary.disabled {
+  color: $text;
+  background-color: $pale;
+  border-color: $pale;
 }

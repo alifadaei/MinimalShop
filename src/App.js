@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import "bootstrap/dist/css/bootstrap.css";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/header";
 import Banner from "./components/banner";
 import ShoppingCart from "./components/shopping-cart";
 import Categories from "./components/categories";
 import Login from "./components/login";
+import FAQ from "./components/faq";
 
 class App extends Component {
   state = {
@@ -15,7 +16,7 @@ class App extends Component {
         categoryName: "گوشت",
         productName: "سوسیس",
         price: 200,
-        quantity: 10,
+        quantity: 0,
         src: require("./assets/svg/sausage.svg"),
       },
       {
@@ -24,7 +25,7 @@ class App extends Component {
         categoryName: "گوشت",
         productName: "تکه گوشت مرغ",
         price: 100,
-        quantity: 20,
+        quantity: 0,
         src: require("./assets/svg/chicken-leg.svg"),
       },
       {
@@ -33,7 +34,7 @@ class App extends Component {
         categoryName: "سالاد",
         productName: "سالاد",
         price: 1000,
-        quantity: 10,
+        quantity: 0,
         src: require("./assets/svg/salad.svg"),
       },
       {
@@ -42,7 +43,7 @@ class App extends Component {
         categoryName: "سس",
         productName: "مایونز",
         price: 300,
-        quantity: 10,
+        quantity: 0,
         src: require("./assets/svg/mayonnaise.svg"),
       },
       {
@@ -51,7 +52,7 @@ class App extends Component {
         categoryName: "سس",
         productName: "کچاپ",
         price: 130,
-        quantity: 20,
+        quantity: 0,
         src: require("./assets/svg/ketchup.svg"),
       },
       {
@@ -60,7 +61,7 @@ class App extends Component {
         categoryName: "سس",
         productName: "خردل",
         price: 150,
-        quantity: 20,
+        quantity: 0,
         src: require("./assets/svg/mustard.svg"),
       },
     ],
@@ -84,26 +85,39 @@ class App extends Component {
     this.setState({ products });
   };
   render() {
+    const mainComponent = (
+      <main>
+        <Banner />
+        <div id="panel-container" className="rtl wrapper">
+          <Categories
+            products={this.state.products}
+            clickHandler={this.clickHandler}
+          />
+          <ShoppingCart
+            trashHandler={this.trashHandler}
+            products={this.state.products.filter(
+              (product) => product.quantity !== 0
+            )}
+            clickHandler={this.clickHandler}
+          />
+        </div>
+      </main>
+    );
     return (
       <React.Fragment>
         <Header />
-        {/* <main>
-          <Banner />
-          <div id="panel-container" className="rtl wrapper">
-            <Categories
-              products={this.state.products}
-              clickHandler={this.clickHandler}
-            />
-            <ShoppingCart
-              trashHandler={this.trashHandler}
-              products={this.state.products.filter(
-                (product) => product.quantity !== 0
-              )}
-              clickHandler={this.clickHandler}
-            />
-          </div>
-        </main> */}
-        <Login />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/faq"
+            element={
+              <div className="container">
+                <FAQ />
+              </div>
+            }
+          />
+          <Route path="/" element={mainComponent} />
+        </Routes>
       </React.Fragment>
     );
   }
