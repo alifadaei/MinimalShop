@@ -1,4 +1,4 @@
-**A Minimal Shop 🛒 based on React**
+**A Minimal Shop 🛒 based on React**<br>
 As a costumer you may like to buy your goods in a very simple manner (often called "UX" in application design). So I developed a shop with one single page where you can see different products and categories and choose as many as you want by clicks!
 
 **Implementation details:**
