@@ -5,5 +5,5 @@ As a costumer you may like to buy your goods in a very simple manner (often call
 As any other react apps, my app consists of React Components, I tried to use seperated Components, each for its dedicated task: <br>
 ![CamScanner 06-23-2022 09 19_1](https://user-images.githubusercontent.com/59139628/175220747-1c7aa966-1ce5-4938-9302-00b92c78993b.jpg)
 
-**Screenshots of app**
+**Screenshots of app** <br>
 ![minimalshop](https://user-images.githubusercontent.com/59139628/175220875-70999598-143f-4f52-abae-14ed29fe786a.gif)
